@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Waves Of Change | Empowering Communities Through Clean Water</title>
+    <meta name="description" content="Providing sustainable water solutions to underserved communities in Pakistan. Join our mission to bring clean water access to thousands.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💧</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-navy: #203b50;
+            --accent-teal-light: #38b2ac;
+            --accent-teal: #319795;
+            --accent-teal-dark: #2c7a7b;
+            --soft-bg: #f5f8fa;
+          }
+
+
+        /* 2. Header background + link colors */
+        nav {
+          background-color: var(--primary-navy) !important;
+        }
+        nav a {
+          color: #f0f4f8 !important;        /* soft off‑white for good contrast */
+        }
+        nav a:hover,
+        nav .active-nav {
+          color: var(--accent-teal-light) !important;
+        }
+
+
+        /* 3. Buttons & accents */
+        .bg-teal-600 {
+          background-color: var(--accent-teal) !important;
+        }
+        .bg-teal-700 {
+          background-color: var(--accent-teal-dark) !important;
+        }
+        .hover\:bg-teal-700:hover {
+          background-color: var(--accent-teal-dark) !important;
+        }
+        .text-teal-600 {
+          color: var(--accent-teal) !important;
+        }
+        .text-teal-700 {
+          color: var(--accent-teal-dark) !important;
+        }
+        .focus\:ring-teal-500:focus {
+          --tw-ring-color: var(--accent-teal-light) !important;
+        }
+
+
+        /* 4. Light-section backgrounds (formerly teal‑50) */
+        .bg-teal-50 {
+          background-color: var(--soft-bg) !important;
+        }
+
+
+        /* 5. Hero gradient */
+        .wave-bg {
+          background: linear-gradient(
+            135deg,
+            var(--primary-navy) 0%,
+            var(--accent-teal-light) 50%,
+            var(--accent-teal-dark) 100%
+          ) !important;
+        }
+
+
+        /* 6. Footer wave accents */
+        .footer-wave-svg path:nth-child(1) { fill: var(--accent-teal-light) !important; }
+        .footer-wave-svg path:nth-child(2) { fill: var(--accent-teal) !important; }
+        .footer-wave-svg path:nth-child(3) { fill: var(--accent-teal-dark) !important; }
+
+
+        .wave-bg {
+            background: linear-gradient(135deg, #38b2ac 0%, #319795 50%, #2c7a7b 100%);
+        }
+       
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+       
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+       
+        .water-drop {
+            animation: drip 3s infinite ease-in-out;
+        }
+       
+        @keyframes drip {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+       
+        .active-nav {
+            position: relative;
+            color: var(--teal-700);
+            font-weight: 600;
+        }
+       
+        .active-nav::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--teal-600);
+            border-radius: 2px;
+        }
+       
+        .stat-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+       
+        .stat-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+       
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+       
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+       
+        .water-wave {
+            animation: wave 8s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+            transform: translate3d(0, 0, 0);
+        }
+       
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(-25%); }
+            100% { transform: translateX(0); }
+        }
+       
+        .sticky-donate {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+            animation: pulse 2s infinite;
+        }
+       
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(49, 151, 149, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(49, 151, 149, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(49, 151, 149, 0); }
+        }
+       
+        /* Logo styling */
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+       
+        .logo-img {
+            height: 50px; /* Adjust based on your logo dimensions */
+            transition: transform 0.3s ease;
+        }
+       
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+
+
+
+        /* Video section styles */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+       
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+
+        footer {
+          position: relative;
+          overflow: hidden;
+          background-color: #1f2937;
+        }
+
+
+        /* full-size SVG covers the footer */
+        .footer-wave-svg {
+          position: absolute;
+          inset: 0;       /* top:0; right:0; bottom:0; left:0; */
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+          pointer-events: none;
+        }
+
+
+        /* push every other footer child above the SVG */
+        footer > :not(.footer-wave-svg) {
+          position: relative;
+          z-index: 1;
+        }
+    </style>
+</head>
+
+
+<body class="font-sans antialiased">
+
+
+
+
+
+
+    <!-- Sticky Donate Button -->
+    <a href="/donate.html" class="sticky-donate inline-flex items-center px-6 py-3 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+        <i class="fas fa-donate mr-2"></i> Donate Now
+    </a>
+
+
+
+
+
+
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                         <a href="#" class="flex items-center space-x-2">
+      <img src="https://i.postimg.cc/VsXyC9dm/WAVES-OF-CHANGE-LOGO-W-TEXT-JPEG.jpg" alt="Waves of Change Logo" class="h-12 w-auto" />
+      <span class="ml-3 text-white font-bold text-lg tracking-wide">Waves of Change</span>
+    </a>
+                        <!-- Replace the src attribute with your actual logo path -->
+                     
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#" class="text-teal-800 hover:text-teal-600 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="#about" class="text-teal-800 hover:text-teal-600 px-3 py-2 text-sm font-medium active-nav">What We Do</a>
+                    <a href="#campaigns" class="text-teal-800 hover:text-teal-600 px-3 py-2 text-sm font-medium">Our Campaigns</a>
+                    <a href="#projects" class="text-teal-800 hover:text-teal-600 px-3 py-2 text-sm font-medium">Our Projects</a>
+                    <a href="#get-involved" class="text-teal-800 hover:text-teal-600 px-3 py-2 text-sm font-medium">Get Involved</a>
+                    <a href="#contact" class="text-teal-800 hover:text-teal-600 px-3 py-2 text-sm font-medium">Contact</a>
+                    <a href="/donate.html"class="ml-4 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">Donate</a>
+
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-teal-800 hover:text-teal-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#" class="block px-3 py-2 text-base font-medium text-teal-800 hover:text-teal-600 hover:bg-gray-50">Home</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-teal-800 hover:text-teal-600 hover:bg-gray-50">What We Do</a>
+                <a href="#campaigns" class="block px-3 py-2 text-base font-medium text-teal-800 hover:text-teal-600 hover:bg-gray-50">Our Campaigns</a>
+                <a href="#projects" class="block px-3 py-2 text-base font-medium text-teal-800 hover:text-teal-600 hover:bg-gray-50">Our Projects</a>
+                <a href="#get-involved" class="block px-3 py-2 text-base font-medium text-teal-800 hover:text-teal-600 hover:bg-gray-50">Get Involved</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-teal-800 hover:text-teal-600 hover:bg-gray-50">Contact</a>
+                <a href="/donate.html">Donate</a>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+    <!-- Hero Section -->
+    <div class="relative wave-bg text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative z-10 pb-20 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40 px-4 sm:px-6 lg:px-8">
+                <div class="text-center fade-in">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-teal-800 bg-opacity-60 mb-6">
+                        <span>Since 2022</span>
+                    </div>
+                    <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                        Be the Wave.
+                        Create the Change.
+                    </h1>
+                    <p class="mt-6 max-w-lg mx-auto text-xl">
+                        Empowering underserved communities across Pakistan through sustainable water solutions and community development.
+                    </p>
+                    <div class="mt-10 flex justify-center space-x-6">
+                        <a href="#get-involved" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-teal-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+                            Join Our Mission
+                        </a>
+                        <a href="#projects" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-teal-700 bg-opacity-60 hover:bg-opacity-70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                            See Our Impact
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- Stats Section -->
+    <div class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+                <div class="stat-card bg-white rounded-lg p-6 text-center shadow-md">
+                    <div class="text-4xl font-bold text-teal-600">2+</div>
+                    <div class="text-sm text-gray-600 mt-2">Hand Pumps Installed</div>
+                    <div class="mt-4">
+                        <i class="fas fa-hand-holding-water text-teal-500 text-2xl"></i>
+                    </div>
+                </div>
+               
+                <div class="stat-card bg-white rounded-lg p-6 text-center shadow-md">
+                    <div class="text-4xl font-bold text-teal-600">1,550+</div>
+                    <div class="text-sm text-gray-600 mt-2">People Impacted</div>
+                    <div class="mt-4">
+                        <i class="fas fa-users text-teal-500 text-2xl"></i>
+                    </div>
+                </div>
+               
+                <div class="stat-card bg-white rounded-lg p-6 text-center shadow-md">
+                    <div class="text-4xl font-bold text-teal-600">2</div>
+                    <div class="text-sm text-gray-600 mt-2">Communities Served</div>
+                    <div class="mt-4">
+                        <i class="fas fa-village text-teal-500 text-2xl"></i>
+                    </div>
+                </div>
+               
+                <div class="stat-card bg-white rounded-lg p-6 text-center shadow-md">
+                    <div class="text-4xl font-bold text-teal-600">2</div>
+                    <div class="text-sm text-gray-600 mt-2">Ongoing Projects</div>
+                    <div class="mt-4">
+                        <i class="fas fa-project-diagram text-teal-500 text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- What We Do Section -->
+    <div id="about" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-teal-600 font-semibold tracking-wide uppercase">What We Do</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Sustainable Development for Pakistan
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    We focus on sustainable development, clean water access, and empowering underserved communities across Pakistan's most vulnerable regions.
+                </p>
+            </div>
+
+
+            <div class="mt-10">
+                <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                    <div class="bg-gray-50 rounded-lg p-6 transition-all duration-300 card-hover">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-teal-500 text-white">
+                            <i class="fas fa-tint text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-gray-900">Clean Water Access</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Installing hand pumps and water filtration systems in communities without access to clean water.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="bg-gray-50 rounded-lg p-6 transition-all duration-300 card-hover">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-teal-500 text-white">
+                            <i class="fas fa-solar-panel text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-gray-900">Sustainable Solutions</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Implementing eco-friendly technologies to create long-term, sustainable change.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="bg-gray-50 rounded-lg p-6 transition-all duration-300 card-hover">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-teal-500 text-white">
+                            <i class="fas fa-hands-helping text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-gray-900">Community Empowerment</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                We conduct training sessions in each village to equip communities with the knowledge and skills for hand pump maintenance, hygiene practices, and sustainable water use.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+          <div class="mt-16 bg-teal-50 rounded-xl p-8 border border-teal-100">
+                <div class="md:flex items-center">
+                    <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+                       <img src="https://i.postimg.cc/yYXzwhHv/IMG-20240826-WA0003-1.jpg"
+     alt="Cha Tibay Wala Impact"
+     class="rounded-xl w-64 h-64 object-cover shadow-md">
+
+                    </div>
+                    <div class="md:w-2/3 md:pl-8">
+                        <h3 class="text-2xl font-bold text-teal-800">Our Impact in Cha Tibay Wala (Kot Addu)</h3>
+                        <p class="mt-4 text-gray-600">
+                            "Before Waves of Change, we had to walk long distances every day just to fetch water. Now, with a hand pump installed in our village, we have clean water right at our doorstep. This has changed our lives—our children are healthier, and we finally have time and energy for other parts of life."
+                        </p>
+                        <div class="mt-6 flex items-center">
+                            <img src="https://i.postimg.cc/fRqWr7c1/shahida-bibi.jpg"
+     alt="Shahida Bibi"
+     class="rounded-full w-16 h-16 object-cover shadow">
+
+                            <div class="ml-4">
+                                <p class="font-medium text-gray-900">Shahida Bibi</p>
+                                <p class="text-sm text-teal-600">Village Elder, Cha Tibay Wala, Kot Addu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- Video Section -->
+    <div class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center mb-12">
+                <h2 class="text-base text-teal-600 font-semibold tracking-wide uppercase">See Our Work</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Transforming Lives Through Water
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Watch how we're making a difference in communities across Pakistan
+                </p>
+            </div>
+           
+            <div class="max-w-4xl mx-auto">
+                <div class="video-container">
+                    <!-- YouTube Embed - Replace VIDEO_ID with your actual YouTube video ID -->
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+                            title="Waves of Change Impact Video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="mt-4 text-center text-gray-600 text-sm">
+                    <em>Note: Replace VIDEO_ID with your actual YouTube video ID</em>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- Campaigns Section -->
+    <div id="campaigns" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-teal-600 font-semibold tracking-wide uppercase">Our Campaigns</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Join Our Mission
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Providing access to clean water by installing hand pumps in underserved communities-see how your support is transforming lives.
+                </p>
+            </div>
+
+
+            <div class="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                
+                
+                
+                
+                
+                
+                
+                
+            
+                
+                <!-- Campaign 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                    <div class="h-48 overflow-hidden">
+    <img src="https://i.postimg.cc/kX1dJJ2b/hand-water-pump.jpg" alt="Water for All" class="w-full h-full object-cover">
+</div>
+
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold text-gray-900">Water for All</h3>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-teal-100 text-teal-800">
+                                Punjab
+                            </span>
+                        </div>
+                        <p class="mt-2 text-gray-600">
+                            Installing hand pumps in different regions to provide sustainable access to clean water for communities facing severe water scarcity.
+
+                        </p>
+                        <div class="mt-4">
+                            <div class="flex justify-between text-sm text-gray-500 mb-1">
+                                <span>Raised: PKR 0</span>
+                                <span>Goal: PKR 55,000</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-teal-600 h-2.5 rounded-full" style="width: 0"></div>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <a href="/donate.html" target="_blank" class="w-full block text-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                                Support This Campaign
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+                <!-- Campaign 2 -->
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- Campaign 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                    <div class="h-48 overflow-hidden">
+    <img src="https://i.postimg.cc/3RHsSWcP/1-1.jpg" alt="Water for All" class="w-full h-full object-cover">
+</div>
+
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold text-gray-900">Water Filtration</h3>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-teal-100 text-teal-800">
+                                Punjab
+                            </span>
+                        </div>
+                        <p class="mt-2 text-gray-600">
+                            Installing community water filtration systems to provide sustainable access to clean water for communities facing severe water scarcity.
+                        </p>
+                        <div class="mt-4">
+                            <div class="flex justify-between text-sm text-gray-500 mb-1">
+                                <span>Raised: PKR 0</span>
+                                <span>Goal: PKR 300,000</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-teal-600 h-2.5 rounded-full" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <a href="/donate.html" target="_blank" class="w-full block text-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                                Support This Campaign
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Projects Section -->
+
+<div id="projects" class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:text-center">
+            <h2 class="text-base text-teal-600 font-semibold tracking-wide uppercase">Our Projects</h2>
+            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                Changing Lives Every Day
+            </p>
+            <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                View our completed projects.
+            </p>
+        </div>
+
+        <div class="mt-10">
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- Project 1 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md transition-all duration-300 card-hover">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="https://i.postimg.cc/FKPrwy02/IMG-20230911-WA0038-1.jpg" alt="Muridkay Project Image" class="w-full h-full object-cover rounded-t-lg" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-teal-100 p-2 rounded-md">
+                                <i class="fas fa-tint text-teal-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Muridkay Village</h3>
+                                <p class="text-sm text-teal-600">Completed 28th July 2023</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-600">
+                            Installed a hand pump in Lambray village, Muridkay, providing clean water access to the local community and improving daily life for its residents.
+                        </p>
+                        <div class="mt-6 flex justify-between items-center">
+                            <div class="flex space-x-1 text-teal-500">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span class="text-sm">Punjab, Pakistan</span>
+                            </div>
+                            <a href="/muridkay.html" class="text-teal-600 hover:text-teal-800 text-sm font-medium">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <!-- Project 2 -->
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md transition-all duration-300 card-hover">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="https://i.postimg.cc/8Pnq8ZYd/Whats-App-Image-2025-07-23-at-02-33-50-cb480a01.jpg" alt="Cha Tibay Wala Project Image" class="w-full h-full object-cover rounded-t-lg" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-teal-100 p-2 rounded-md">
+                                <i class="fas fa-tint text-teal-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Cha Tibay Wala Village</h3>
+                                <p class="text-sm text-teal-600">Completed 27th August 2024</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-600">
+                            Installed a hand pump in Cha Tibay Wala village, Muzaffargarh, providing clean water to the local community and supporting their daily water needs.
+                        </p>
+                        <div class="mt-6 flex justify-between items-center">
+                            <div class="flex space-x-1 text-teal-500">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span class="text-sm">Punjab, Pakistan</span>
+                            </div>
+                            <a href="/chatibaywala.html" class="text-teal-600 hover:text-teal-800 text-sm font-medium">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- END .grid -->
+
+            <!-- Centered Button -->
+            <div class="mt-12 text-center">
+                <a href="/projects.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <!-- Partners Section -->
+    <div class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-teal-600 font-semibold tracking-wide uppercase">Our Partners</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    
+                    (Coming Soon)
+                </p>
+            </div>
+        
+            
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- Get Involved Section -->
+    <div id="get-involved" class="py-12 bg-teal-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-teal-200 font-semibold tracking-wide uppercase">Get Involved</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl">
+                    Join Our Movement
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-teal-100 lg:mx-auto">
+                    Join us as a volunteer, sponsor a project, or help spread our mission in your community.
+                </p>
+            </div>
+
+
+            <div class="mt-10">
+                <div class="grid grid-cols-1 gap-10 sm:grid-cols-3">
+                    
+                    
+                    
+                    
+                    
+                    <!-- Volunteer -->
+                    <div class="bg-teal-800 rounded-lg p-8 text-center transition-all duration-300 card-hover">
+                        <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-md bg-teal-600 text-white">
+                            <i class="fas fa-hands-helping text-xl"></i>
+                        </div>
+                        <h3 class="mt-6 text-lg font-medium">Volunteer</h3>
+                        <p class="mt-2 text-base text-teal-100">
+                            Join our team on the ground or remotely to help with projects, fundraising, and awareness.
+                        </p>
+                        <div class="mt-6">
+                            <a href="/volunteer.html" target="_blank" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-teal-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+                                Sign Up to Volunteer
+                            </a>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                    <!-- Donate -->
+                    <div class="bg-teal-800 rounded-lg p-8 text-center transition-all duration-300 card-hover">
+                        <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-md bg-teal-600 text-white">
+                            <i class="fas fa-donate text-xl"></i>
+                        </div>
+                        <h3 class="mt-6 text-lg font-medium">Donate</h3>
+                        <p class="mt-2 text-base text-teal-100">
+                            Your financial support helps us install more water pumps and expand our programs.
+                        </p>
+                        <div class="mt-6">
+                            <a href="/donate.html" target="_blank" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                                Make a Donation
+                            </a>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <!-- Partner -->
+                    <div class="bg-teal-800 rounded-lg p-8 text-center transition-all duration-300 card-hover">
+                        <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-md bg-teal-600 text-white">
+                            <i class="fas fa-handshake text-xl"></i>
+                        </div>
+                        <h3 class="mt-6 text-lg font-medium">Partner With Us</h3>
+                        <p class="mt-2 text-base text-teal-100">
+                            Businesses and organizations can sponsor projects or collaborate with us.
+                        </p>
+                        <div class="mt-6">
+                            <a href="/partnership.html" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-teal-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+                                Partnership Inquiry
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Newsletter Section -->
+    <div class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-teal-50 rounded-2xl px-6 py-10 sm:p-12">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl font-extrabold text-teal-900">Stay Updated</h2>
+                    <p class="mt-4 text-lg text-teal-800">
+                        Join our newsletter to receive updates on our projects and impact.
+                    </p>
+                    <form class="mt-8 sm:flex max-w-xl mx-auto">
+                        <label for="email-address" class="sr-only">Email address</label>
+                        <input id="email-address" name="email" type="email" autocomplete="email" required class="w-full px-5 py-3 placeholder-gray-500 focus:ring-teal-500 focus:border-teal-500 sm:max-w-xs border-gray-300 rounded-md" placeholder="Enter your email">
+                        <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                            <button type="submit" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                                Subscribe
+                            </button>
+                        </div>
+                    </form>
+                    <p class="mt-3 text-sm text-teal-700">
+                        We respect your privacy. Unsubscribe at any time.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- Donate CTA -->
+    <div id="donate" class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        Ready to make a difference?
+                    </h2>
+                    <p class="mt-3 max-w-3xl text-lg text-gray-500">
+                        Every donation helps us bring clean water to another family in need. Join our mission today.
+                    </p>
+                    <div class="mt-8 sm:flex">
+                        <div class="rounded-md shadow">
+                            <a href="/donate.html" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 md:py-4 md:text-lg md:px-10">
+                                Donate Now
+                            </a>
+                        </div>
+                        <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+                            <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-teal-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 lg:mt-0">
+                    <div class="bg-teal-100 rounded-lg p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-teal-600 rounded-md p-3">
+                                <i class="fas fa-tint text-white text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-teal-800">Your Impact</h3>
+                                <p class="mt-1 text-sm text-teal-700">
+                                    PKR 5,000 provides clean water for a family for a year. PKR 55,000 funds an entire hand pump.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <div class="flex justify-between text-sm text-teal-800">
+                                <span>Hand Pumps Installed</span>
+                                <span>2</span>
+                            </div>
+                            <div class="mt-1 w-full bg-teal-200 rounded-full h-2">
+                                <div class="bg-teal-600 h-2 rounded-full" style="width: 100%"></div>
+                            </div>
+                            <div class="mt-4 flex justify-between text-sm text-teal-800">
+                                <span>People Impacted</span>
+                                <span>1,550+</span>
+                            </div>
+                            <div class="mt-1 w-full bg-teal-200 rounded-full h-2">
+                                <div class="bg-teal-600 h-2 rounded-full" style="width: 55%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Contact Section -->
+    <div id="contact" class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-teal-600 font-semibold tracking-wide uppercase">Contact Us</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Get in Touch
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Have questions or want to partner with us? We'd love to hear from you.
+                </p>
+            </div>
+           
+            <div class="mt-10 bg-white rounded-xl shadow-md overflow-hidden max-w-4xl mx-auto">
+                <div class="md:flex">
+                    <div class="md:w-1/3 bg-teal-700 text-white p-8">
+                        <h3 class="text-xl font-bold">Contact Information</h3>
+                        <div class="mt-6 space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 text-teal-200"></i>
+                                <div class="ml-3">
+                                    <p class="text-sm text-teal-200">Lahore,</p>
+                                    <p class="text-sm text-teal-200"> Pakistan</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone mt-1 text-teal-200"></i>
+                                <div class="ml-3">
+                                    <p class="text-sm text-teal-200">+92 342 9993999</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope mt-1 text-teal-200"></i>
+                                <div class="ml-3">
+                                    <p class="text-sm text-teal-200">Projectwavesofchange@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-medium">Follow Us</h4>
+                            <div class="flex space-x-4 mt-3">
+                                <a href="#" class="text-teal-200 hover:text-white">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="text-teal-200 hover:text-white">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="text-teal-200 hover:text-white">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="text-teal-200 hover:text-white">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 p-8">
+                        <form class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                                <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                <input type="email" id="email" name="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                                <textarea id="message" name="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800">
+      <!-- New animated wave background -->
+      <!-- full‑footer SVG wave background -->
+        <svg class="footer-wave-svg" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 200" preserveAspectRatio="none">
+          <path fill="#38b2ac" opacity="0.3">
+            <animate attributeName="d" dur="10s" repeatCount="indefinite"
+              values="
+                M0,100 C300,200 600,0   900,100 C1200,200 1500,0   1800,100 L1800,200 L0,200 Z;
+                M0,100 C300,0   600,200 900,100 C1200,0   1500,200 1800,100 L1800,200 L0,200 Z;
+                M0,100 C300,200 600,0   900,100 C1200,200 1500,0   1800,100 L1800,200 L0,200 Z" />
+          </path>
+          <path fill="#319e9c" opacity="0.4">
+            <animate attributeName="d" dur="7s" repeatCount="indefinite"
+              values="
+                M0,120 C300,20  600,180 900,120 C1200,20 1500,180 1800,120 L1800,200 L0,200 Z;
+                M0,120 C300,180 600,20  900,120 C1200,180 1500,20  1800,120 L1800,200 L0,200 Z;
+                M0,120 C300,20  600,180 900,120 C1200,20 1500,180 1800,120 L1800,200 L0,200 Z" />
+          </path>
+          <path fill="#2c7a7b" opacity="0.6">
+            <animate attributeName="d" dur="5s" repeatCount="indefinite"
+              values="
+                M0,140 C300,60  600,140 900,60  C1200,140 1500,60  1800,140 L1800,200 L0,200 Z;
+                M0,140 C300,140 600,60  900,140 C1200,60 1500,140 1800,140 L1800,200 L0,200 Z;
+                M0,140 C300,60  600,140 900,60  C1200,140 1500,60  1800,140 L1800,200 L0,200 Z" />
+          </path>
+        </svg>
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <h3 class="text-white text-lg font-bold flex items-center">
+                        <i class="fas fa-water mr-2"></i> Project Waves Of Change
+                    </h3>
+                    <p class="mt-4 text-gray-300 text-sm">
+                        Empowering underserved communities in Pakistan through sustainable development and clean water access.
+                    </p>
+                    <div class="mt-6 flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-white text-sm font-semibold tracking-wider uppercase">About</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-gray-300 hover:text-white text-sm">Our Mission</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white text-sm">Team</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white text-sm">Financials</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white text-sm">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-sm font-semibold tracking-wider uppercase">Support</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="/donate.html" class="text-gray-300 hover:text-white text-sm">Donate</a></li>
+                        <li><a href="volunteer.html" class="text-gray-300 hover:text-white text-sm">Volunteer</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white text-sm">Partner</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white text-sm">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2022 Project Waves Of Change. All rights reserved.
+                </p>
+                <div class="mt-4 md:mt-0 flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+           
+            // Update aria-expanded attribute
+            const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+            this.setAttribute('aria-expanded', !expanded);
+        });
+
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+               
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') {
+                    // Scroll to top for home button
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    return;
+                }
+               
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                   
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        document.getElementById('mobile-menu-button').setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+        });
+       
+        // Fade in animation for hero section
+        document.addEventListener('DOMContentLoaded', function() {
+            const hero = document.querySelector('.fade-in');
+            if (hero) {
+                setTimeout(() => {
+                    hero.style.opacity = '1';
+                }, 300);
+            }
+        });
+    </script>
+</body>
+</html>
+
