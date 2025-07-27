@@ -1,0 +1,61 @@
+<!-- Donation Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donate Now - Waves of Change</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-blue-50 font-sans">
+  <div class="max-w-3xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <img src="https://i.postimg.cc/VsXyC9dm/WAVES-OF-CHANGE-LOGO-W-TEXT-JPEG.jpg" alt="Logo" class="mx-auto h-20 mb-6">
+      <h1 class="text-3xl font-extrabold text-teal-700 mb-2">Donate to Project Waves of Change</h1>
+      <p class="text-gray-600 text-sm">Your contribution brings clean water to those in need.</p>
+    </div>
+
+    <form class="bg-white mt-10 p-8 rounded-xl shadow-lg space-y-6" action="#" method="POST" enctype="multipart/form-data">
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+        <input type="text" name="name" id="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-blue-500 focus:border-blue-500"/>
+      </div>
+
+      <div>
+        <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+        <input type="tel" name="phone" id="phone" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-blue-500 focus:border-blue-500"/>
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" name="email" id="email" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-blue-500 focus:border-blue-500"/>
+      </div>
+
+      <div>
+        <label for="amount" class="block text-sm font-medium text-gray-700">Amount Donated (PKR)</label>
+        <input type="number" name="amount" id="amount" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-blue-500 focus:border-blue-500"/>
+      </div>
+
+      <div class="bg-teal-50 border border-teal-100 p-4 rounded-lg">
+        <h3 class="font-semibold text-teal-800">Our Bank Details</h3>
+        <p class="text-sm text-gray-700 mt-2">Account Name: <span class="font-medium">M.Arhum Khan Sumbal</span></p>
+        <p class="text-sm text-gray-700">Account Number: <span class="font-medium">03429993999</span></p>
+        <p class="text-sm text-gray-700">Bank: <span class="font-medium">EasyPaisa</span></p>
+      </div>
+
+      <div>
+        <label for="proof" class="block text-sm font-medium text-gray-700">Upload Proof of Donation</label>
+        <input type="file" name="proof" id="proof" accept="image/*,application/pdf" required class="mt-1 block w-full text-sm text-gray-500 file:py-2 file:px-4 file:border file:border-gray-300 file:rounded-md file:bg-white file:text-gray-700 hover:file:bg-gray-50"/>
+      </div>
+
+      <div>
+        <button type="submit" class="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+          Submit Donation
+        </button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+
+
